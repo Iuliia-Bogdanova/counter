@@ -1,0 +1,250 @@
+@media (hover: hover) {
+  a:hover,
+  button:hover,
+  .card-item:hover {
+    cursor: pointer;
+  }
+
+  .menu__link-inactive:hover,
+  .slide__btn-inactive:hover,
+  .tab-active:hover,
+  .modal__card:hover {
+      cursor: default;
+  }
+
+  .menu__link:hover {
+    background-color: var(--primary-10);
+    color: var(--primary);
+  }
+
+  .primary-btn:hover {
+    background-color: var(--static-white);
+    color: var(--dark);
+  }
+
+  .slide__btn-active:hover {
+    border: 1px solid var(--static-white);
+    background-color: var(--static-white);
+    
+    .arrow-right svg path, .arrow-left svg path {
+      stroke: var(--primary);
+    }
+  }
+
+  .card-item:hover h3,
+  .contact-item:hover h3,
+  .contact-item:hover .action-large,
+  .info__caption:hover {
+    color: var(--primary);
+  }
+
+  .modal__card:hover h3 {
+    color: inherit;
+  }
+
+  .social-item:hover svg path {
+    stroke: var(--primary);
+  }
+
+  
+
+  .tab:hover {
+    background-color: var(--static-white-20);
+  }
+}
+
+@media (max-width: 1438px) {
+  .header-item {
+    padding: 12px calc(4vw + 8px);
+  }
+
+  .about__bg,
+  .best__bg,
+  .footer-item {
+    padding: 60px calc(4vw + 8px);
+  }
+
+  .gifts__cards {
+    padding: 0 calc(4vw + 8px);
+  }
+
+  .about__text {
+    width: 42%;
+    padding: calc(60px + ((40) * ((100vw - 768px) / 672))) 0 calc(60px + ((40) * ((100vw - 768px) / 672))) 60px;
+  }
+
+  .slider-item {
+    padding-left: calc(4vw + 8px);
+  }
+
+  .slider__btns {
+    padding: 0 calc(4vw + 8px);
+  }
+
+  .best__cards {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1402px) {
+  .best__cards {
+    justify-content: center;
+    column-gap: 168px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .best__cards {
+    column-gap: 48px;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-item {
+    padding: 12px 8px;
+  }
+
+  .burger-menu {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0 10px;
+
+      .line {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        border-radius: 2px;
+        background-color: var(--dark);
+        transition: transform 0.3s ease;
+
+        &:first-child {
+          top: 15px;
+        }
+
+        &:last-child {
+          top: 23px;
+        }
+      }
+
+    &.active {
+      .line {
+        &:first-child {
+          transform: translateY(4px) rotate(45deg);
+        }
+
+        &:last-child {
+          transform: translateY(-4px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu__list {
+    position: fixed; 
+    @include flex-center-space-between;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    margin-top: 62px;
+    gap: 32px;
+    background-color: var(--static-white);
+    z-index: 20;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+
+    &.active {
+      transform: translateX(0);
+      transition: transform 0.4s ease;
+    }
+  }
+
+  .menu__link {
+    font-size: 24px;
+    line-height: 152%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .about__bg,
+  .best__bg,
+  .footer-item {
+    padding: 60px 8px;
+  }
+
+  .slider-item {
+    padding-left: 8px;
+  }
+
+  .slider__btns {
+    padding: 0 8px;
+  }
+
+  .best__cards {
+    column-gap: 8px;
+  }
+
+  .arrow-up {
+    @include flex-center-space-between;
+    justify-content: center;
+    bottom: 8px;
+    right: 8px;
+    width: 56px;
+    height: 56px;
+    border-radius: 100px;
+    border: 1px solid var(--primary);
+    background-color: var(--static-white);
+    z-index: 30;
+    transition: all 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .about-item {
+    flex-direction: column;
+    height: auto;
+    gap: 0;
+  }
+
+  .about__text {
+    width: 100%;
+    padding: 60px 20px;
+  }
+
+  .about__img {
+    width: 100%;
+    height: 528px;
+  }
+
+  .tabs {
+    gap: 0;
+  }
+
+  .tab {
+    padding: 12px 8px;
+  }
+
+  .modal,
+  .modal__card {
+    min-width: 364px;
+  }
+}
